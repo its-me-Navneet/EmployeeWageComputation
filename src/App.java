@@ -38,7 +38,12 @@ public class App {
         // For Daily wage Computation 
 
         int wage = employeeWageForToday();
-        System.out.println("Income for today work is "+ wage); 
+        System.out.println("Income for today work is "+ wage);  
+
+        // For calculating Monthly Wages 
+
+        int totalWage = wagesForMonth();
+        System.out.println("Total wages for a month is "+ totalWage);
 
     }
 }
