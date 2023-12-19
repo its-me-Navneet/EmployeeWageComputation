@@ -8,6 +8,10 @@ public class App {
         return random.nextInt(9);
 
     }
+    static int employeeWageForToday(){
+
+         return checkEmployeePresentOrAbsent()*20 ;
+    }
 
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to calculating wage computation");
@@ -21,5 +25,11 @@ public class App {
         } else {
             System.out.println("Present");
         }
+
+        // For Daily wage Computation 
+
+        int wage = employeeWageForToday();
+        System.out.println("Income for today work is "+ wage); 
+
     }
 }
