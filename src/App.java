@@ -13,6 +13,11 @@ public class App {
          return checkEmployeePresentOrAbsent()*20 ;
     }
 
+    static void partTimeEmployeeWage(){
+            // Do not have clarity of question    
+ 
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to calculating wage computation");
 
