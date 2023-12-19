@@ -17,6 +17,10 @@ public class App {
             // Do not have clarity of question    
  
     }
+    static int wagesForMonth(){
+         
+         return 20*8*20 ;
+    }
 
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to calculating wage computation");
