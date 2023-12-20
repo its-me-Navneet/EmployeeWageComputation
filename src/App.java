@@ -1,46 +1,6 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
-    static int checkEmployeePresentOrAbsent() {
-
-        Random random = new Random();
-
-        return random.nextInt(9);
-
-    }
-
-    static int employeeWageForToday() {
-        int hourPresent = checkEmployeePresentOrAbsent();
-        System.out.println("Today you work for " + hourPresent);
-        return hourPresent * 20;
-    }
-
-    static int partTimeEmployeeWage() {
-        int WagePerHour = 10;
-        int hourPresent = checkEmployeePresentOrAbsent();
-        System.out.println("Today you work for " + hourPresent);
-        return hourPresent * WagePerHour;
-
-    }
-
-    static int wagesForMonth() {
-
-        return 20 * 8 * 20;
-    }
-
-    static int wageForMonthPartTime() {
-
-        int day = 0;
-        int hr = 0;
-
-        while (day <= 20 && hr < 100) {
-            day++;
-            hr += checkEmployeePresentOrAbsent();
-        }
-        int Salary = hr * 20;
-        return Salary;
-    }
 
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to calculating wage computation");
@@ -52,17 +12,18 @@ public class App {
             System.out.println("Please Enter the Below Option");
             System.out.println("Option 1 Check present");
             System.out.println("Option 2 for calculating Today Salary ");
-            System.out.println("Option 3 for calculating monthly salary ");
+            System.out.println("Option 3 for calculating monthly salary for Full-Time ");
             System.out.println("Option 4 for calculating monthly salary for part time ");
             System.out.println("Option 5 for Exit ");
             System.out.println("******************************");
             int option = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); 
+            //................ Details of Employee................
+              Employee Emp = new Employee("xyz", "xyz", "part-Time", 10) ;
             switch (option) {
                 case 1:
                     // For checking whether Employee is present or not
-
-                    int hour = checkEmployeePresentOrAbsent();
+                    int hour = Emp.checkEmployeePresentOrAbsent();
 
                     if (hour == 0) {
                         System.out.println("Absent");
@@ -74,17 +35,17 @@ public class App {
                 case 2:
                     // For Daily wage Computation
 
-                    int wage = employeeWageForToday();
+                    int wage = Emp.employeeWageForToday();
                     System.out.println("And Income for today work is " + wage);
                     break;
                 case 3:
-                    // For calculating Monthly Wages
-                    int totalWage = wagesForMonth();
+                    // For calculating Monthly Wages for full-time 
+                    int totalWage = Emp.wagesForMonth();
                     System.out.println("Total wages for a month is " + totalWage);
                     break;
                 case 4:
-                    // For calculating Monthly Wages
-                    int Salary = wageForMonthPartTime();
+                    // For calculating Monthly Wages for part -time
+                    int Salary = Emp.wageForMonthPartTime();
                     System.out.println("Total wages for a month is " + Salary);
                     break; 
                 case 5:
