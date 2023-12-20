@@ -13,9 +13,13 @@ public class App {
          return checkEmployeePresentOrAbsent()*20 ;
     }
 
-    static void partTimeEmployeeWage(){
-            // Do not have clarity of question    
- 
+   static int partTimeEmployeeWage() {
+         int WwagePerHour = 10 ;
+         int hourPresent =checkEmployeePresentOrAbsent(); 
+          System.out.println("Today you work for "+hourPresent);
+          return hourPresent *WwagePerHour;
+
+
     }
 
     public static void main(String[] args) throws Exception {
