@@ -16,8 +16,12 @@ public class App {
           return hourPresent * 20;
     }
 
-    static void partTimeEmployeeWage() {
-        // Do not have clarity of question
+   static int partTimeEmployeeWage() {
+         int WagePerHour = 10 ;
+         int hourPresent =checkEmployeePresentOrAbsent(); 
+          System.out.println("Today you work for "+hourPresent);
+          return hourPresent * WagePerHour;
+
 
     }
 
