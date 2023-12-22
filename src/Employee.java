@@ -56,4 +56,31 @@ public class Employee {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+
+    public String getType() {
+        return type;
+    }
+
+
+    public int getSalaryPerHour() {
+        return SalaryPerHour;
+    }
+
+
+    public int getWorkingHoursMonth() {
+        return workingHoursMonth;
+    }
+    
+
+
+
 }
