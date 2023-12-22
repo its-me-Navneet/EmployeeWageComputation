@@ -6,12 +6,14 @@ public class Employee {
     private String address ;
     private String type ;
     private int SalaryPerHour ; 
+    private int workingHoursMonth ;
 
-     public Employee(String name ,String address, String type ,int salary){
+     public Employee(String name ,String address, String type ,Company c){
         this.name=name ;
         this.address=address ;
         this.type=type ;
-        this.SalaryPerHour=salary ;
+        this.SalaryPerHour=c.getWagePerHour() ;
+        this.workingHoursMonth =c.getWorkingHoursMonth();
      }
   
 
@@ -26,7 +28,7 @@ public class Employee {
      int employeeWageForToday() {
         int hourPresent = checkEmployeePresentOrAbsent();
         System.out.println("Today you work for " + hourPresent);
-        return hourPresent * 20;
+        return hourPresent * SalaryPerHour;
     }
       int partTimeEmployeeWage() {
         int WagePerHour = 10;
@@ -38,7 +40,7 @@ public class Employee {
 
      int wagesForMonth() {
 
-        return SalaryPerHour * 8 * 20;
+        return SalaryPerHour*workingHoursMonth;
     }
       int wageForMonthPartTime() {
 

@@ -19,7 +19,8 @@ public class App {
             int option = sc.nextInt();
             sc.nextLine(); 
             //................ Details of Employee................
-              Employee Emp = new Employee("xyz", "xyz", "part-Time", 10) ;
+              Company GE =new Company("GE", 5, 100,500 );
+              Employee Emp = new Employee("xyz", "xyz", "part-Time",GE) ;
             switch (option) {
                 case 1:
                     // For checking whether Employee is present or not
