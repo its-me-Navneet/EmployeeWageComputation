@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Company {
     private String name ;
     private int numberOfWorkingDays ;
@@ -14,6 +16,23 @@ public class Company {
         this.wagePerHour =wagePerHour ;
     }
 
+    public int wagesForMonth() {
+        Random random = new Random() ;
+        int type = random.nextInt(2) ; 
+         if(type == 1)
+        return wagePerHour*workingHoursMonth; 
+  
+        int day = 0;
+        int hr = 0;
+
+        while (day <= 20 && hr < workingHoursMonth) {
+            day++;
+            hr += random.nextInt(9) ; 
+        }
+        int Salary = hr * wagePerHour;
+        return Salary;
+
+    }
     
       public void setName(String name) {
         this.name = name;
