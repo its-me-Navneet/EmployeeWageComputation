@@ -33,6 +33,15 @@ public class Company {
         return Salary;
 
     }
+
+    public int oneDayWage(){
+    int wage=0 ;
+     int workinghour = new Random().nextInt(9) ;
+
+     wage += workinghour*wagePerHour ; 
+     return wage ;
+
+    }
     
       public void setName(String name) {
         this.name = name;
