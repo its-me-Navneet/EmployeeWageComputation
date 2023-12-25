@@ -1,21 +1,27 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+
+import javax.print.DocFlavor.STRING;
 
 public class App implements EmployeeWageInterface {
     
 private int noOfCompany ; 
  private ArrayList<Company> company ;  
  private ArrayList<Integer>dailyIncome ;
+ private HashMap<String,Company> companyList ;
  
    public  App(int n){
      
      this.noOfCompany = n; 
      company = new ArrayList<>() ;
      dailyIncome = new ArrayList<>() ;
+     companyList = new HashMap<String,Company>() ;
    }
    
     @Override
-public void addCompany(Company c) {
+public void addCompany(Company c) { 
+   companyList.put(c.getName(), c) ;
    company.add(c) ;
     
 }
@@ -58,14 +64,29 @@ public int computeDailyWage() {
          
         // int totalWage = EmpWageBuilder.computeWage() ;
         //  System.out.println(totalWage);
+        // int totalWage =0 ;
+        //  for(int i=0;i<30;i++){
+        //   EmpWageBuilder.dailyIncome.add(EmpWageBuilder.computeDailyWage()) ;
+        //   System.out.println(EmpWageBuilder.dailyIncome.get(i)); 
+        //   totalWage += EmpWageBuilder.dailyIncome.get(i) ;
+        //  }
+
+        //  System.out.println("Total income for month is "+ totalWage); 
+       
+
+        
         int totalWage =0 ;
-         for(int i=0;i<30;i++){
-          EmpWageBuilder.dailyIncome.add(EmpWageBuilder.computeDailyWage()) ;
-          System.out.println(EmpWageBuilder.dailyIncome.get(i)); 
-          totalWage += EmpWageBuilder.dailyIncome.get(i) ;
+        System.out.println("Enter Company name ");
+         String name = new Scanner(System.in).nextLine() ; 
+      
+         Company companyName = EmpWageBuilder.companyList.get(name) ;
+         if(companyName == null) {
+           System.out.println("You do not work in this company"); 
+           return ;
          }
 
-         System.out.println("Total income for month is "+ totalWage);
+         totalWage = companyName.wagesForMonth() ;
+         System.out.println("total wage for the " + name + " is "+ totalWage);
 
          
 
